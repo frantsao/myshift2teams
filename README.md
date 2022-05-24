@@ -2,7 +2,7 @@
 ## Simple API service for organization of shifts
 
 ### What?
-This is a minimal app sending messages about shifts in a organization to MS Teams. You can send a json to the *myshift* endpoint with a list of people and it will store the configuration and the initial shift in a redis database. Then you can update the shift or send a shift reminder to a MS Teams channel.
+This is a minimal app sending messages about shifts in a organization to MS Teams. You can send a json to the *myshift* endpoint with a list of people and it will store the configuration and the initial shift in a [Redis](https://redis.io) database. Then you can update the shift or send a shift reminder to a MS Teams channel.
 
 ### How to build it?
 You will need a D compiler installed (DMD/ldc/...), a C compiler and the DUB package manager. You also will need the sources of phobos library, zlib and openssl lib.
@@ -12,7 +12,8 @@ With all these elements, you only need to run `dub install` in this directory.
 Alternatively, there is a [Dockerfile](Dockerfile) that you can use to build a container.
 
 ### How to run it?
-In order to run myshift2teams, you must have installed zlib, openssl library and phobos.
+In order to run myshift2teams, you must have installed zlib, openssl library and phobos. And, you'll need a running Redis database where the configuration and shifts will be stored.
+
 Then you can execute the binary:
 ```
 $ ./myshift2teams 
