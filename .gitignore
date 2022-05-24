@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/myshift2teams
+myshift2teams.so
+myshift2teams.dylib
+myshift2teams.dll
+myshift2teams.a
+myshift2teams.lib
+myshift2teams-test-*
+*.exe
+*.o
+*.obj
+*.lst

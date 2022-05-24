@@ -1,0 +1,13 @@
+{
+	"authors": [
+		"Francisco Javier Tsao Santín"
+	],
+	"copyright": "Copyright © 2022, Francisco Javier Tsao Santín",
+	"dependencies": {
+		"tinyredis": "~>2.3.1",
+		"vibe-d": "~>0.9.4"
+	},
+	"description": "A minimal app sending shift notifications to MS Teams",
+	"license": "AGPLv3",
+	"name": "myshift2teams"
+}

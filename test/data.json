@@ -1,0 +1,7 @@
+{ "team": ["Jaime", "Fran", "Álex", "Marcos", "Marcelo", "Sergio", "Santi", "Omar" ],
+"notificationUrl": "http://127.0.0.1:9000/sandbox/test",
+"themeColor": "FF9A0B",
+"avatarUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Hawk_eye.jpg/64px-Hawk_eye.jpg",
+"bodyMessage": "Today is in charge: ",
+"titleMessage": "Current shift"
+}
