@@ -88,7 +88,24 @@ Server: vibe.d/1.22.3
 
 ```
 
-I sent the request in the example using the wonderful [HTTPie](https://httpie.io/).
+You always can check the current state of shifts:
+
+```
+$ http 127.0.0.1:9000/api/myshift
+HTTP/1.1 200 OK
+Content-Length: 97
+Content-Type: application/json; charset=UTF-8
+Date: Mon, 30 May 2022 22:54:06 GMT
+Keep-Alive: timeout=10
+Server: vibe.d/1.22.3
+
+{
+    "Current shift for": "Álex",
+    "Team": "[Jaime, Fran, Álex, Marcos, Marcelo, Sergio, Santi, Omar]"
+}
+```
+
+I sent the example requests  using the wonderful [HTTPie](https://httpie.io/) (but you can use [cURL](https://curl.se/) or whatever).
 
 ### Why?
 
