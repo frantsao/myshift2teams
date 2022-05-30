@@ -18,7 +18,7 @@ import std.process : environment;
 import tinyredis;
 
 @path("/api/") interface MyShiftAPI {
-	@safe string getMyshift();
+	Json getMyshift();
 	Json addMyshift(@viaBody("team") string[] team, 
 			@viaBody("notificationUrl") string notificationUrl,
 			@viaBody("avatarUrl") string avatarUrl,
@@ -33,9 +33,16 @@ import tinyredis;
 
 class MyShiftAPIService : MyShiftAPI {
 
-	@safe string getMyshift()
+	Json getMyshift()
 	{
-		return("Send me a POST request with the shift configuration");
+		auto redis_host = environment.get("REDIS_HOST", "127.0.0.1");
+    		auto redis_port = to!ushort(environment.get("REDIS_PORT", "6379"));
+		auto redis = new Redis(redis_host, redis_port);
+		auto currentShift=to!int(redis.send("GET", "shift"));
+		auto buddy=to!string(redis.send("LINDEX", "team", currentShift));
+		auto team=to!string(redis.send("LRANGE", "team", "0", "-1"));
+
+		return(Json(["Team": Json(team),"Current shift for": Json(buddy)]) );
 	}
 
 	string getSetmyshift(@viaQuery("shift") int shift)
